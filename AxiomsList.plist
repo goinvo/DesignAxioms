@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>New item - 13</key>
+	<string>author_andreiherasimchuk.png</string>
+	<key>New item - 14</key>
+	<string>author_dirkknemeyer.png</string>
+	<key>New item - 15</key>
+	<string>author_juhansonin.png</string>
+	<key>New item - 16</key>
+	<string>author_lukewroblewski.png</string>
+	<key>New item</key>
+	<string>quote_befamiliarwithcode.png</string>
+	<key>New item - 2</key>
+	<string>quote_designisnottheoretical.png</string>
+	<key>New item - 3</key>
+	<string>quote_dontdesign.png</string>
+	<key>New item - 4</key>
+	<string>quote_forgetprettypictures.png</string>
+	<key>New item - 5</key>
+	<string>quote_ganttchartsillusionofmanagement.png</string>
+	<key>New item - 6</key>
+	<string>quote_gohighfidelity.png</string>
+	<key>New item - 7</key>
+	<string>quote_ifeverythingisimportant.png</string>
+	<key>New item - 8</key>
+	<string>quote_letinkuilinesdisappear.png</string>
+	<key>New item - 9</key>
+	<string>quote_makethings.png</string>
+	<key>New item - 10</key>
+	<string>quote_prototypesarentends.png</string>
+	<key>New item - 11</key>
+	<string>quote_realdataistruth.png</string>
+	<key>New item - 12</key>
+	<string>quote_reducedistance.png</string>
+	<key>What Interface</key>
+	<string>axiom_knowthycode.png</string>
+	<key>Let Data Scream</key>
+	<string>axiom_letdatascream.png</string>
+	<key>Know Thy Code</key>
+	<string>axiom_whatinterface.png</string>
+	<key>Prototype Like Crazy</key>
+	<string>axiom_prototypelikecrazy.png</string>
+	<key>All Axioms</key>
+	<string>axiom_allAxioms.png</string>
+</dict>
+</plist>

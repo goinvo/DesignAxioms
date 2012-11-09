@@ -283,11 +283,12 @@
     [UIView animateWithDuration:0.5 delay:0.0f options:UIViewAnimationOptionBeginFromCurrentState|UIViewAnimationCurveEaseOut animations:^(){
         
         [self.scrollView setCenter:newPt];
-
+        [self.scrollView setScrollEnabled:NO];
         [self.scrollView setTransform:CGAffineTransformMakeScale(xScale, yScale)];
     } completion:^(BOOL finished){
         if(finished){
             
+            [self.delegate mainScrollviewYOffset:origPosition];
             [self.scrollView removeFromSuperview];
             [self.delegate unhideImg:[self currentImageName]];
             [self.presentingViewController dismissViewControllerAnimated:NO completion:^(){
@@ -318,6 +319,8 @@
      
         [self.scrollView scrollRectToVisible:CGRectMake(DETAIL_SCROLL_WIDTH,0,DETAIL_SCROLL_WIDTH,DETAIL_SCROLL_HEIGHT) animated:NO];
     }
+    
+ //   NSLog(@"Scroll View content offset is %@", NSStringFromCGPoint(self.scrollView.contentOffset));
 }
 
 #pragma mark -
@@ -368,5 +371,4 @@
     
     return UIInterfaceOrientationIsPortrait(interfaceOrientation);
 }
-
 @end

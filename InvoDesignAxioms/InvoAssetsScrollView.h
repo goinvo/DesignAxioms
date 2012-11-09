@@ -32,7 +32,7 @@
 
 -(void)hideImage:(NSString *)img;
 -(void)unhideImage:(NSString *)img;
--(void)scrollToYOffset:(float)newY;
+-(void)scrollToYOffset:(CGPoint)newY;
 
 -(void)stopTouches;
 -(void)resumeTouches;

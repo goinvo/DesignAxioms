@@ -36,12 +36,10 @@
     if (self) {
         // Initialization code
         [self resumeTouches];
-        
-//        [self setUserInteractionEnabled:YES];
-//
-//        self.isGestureEnabled = YES;
-        
+                
         self.scrollView = [[UIScrollView alloc]initWithFrame:frame];
+//        self.scrollView.delegate = self;
+        
         [self addSubview:self.scrollView];
 
         if ([componentType isEqualToString:TYPE_AXIOMS]) {
@@ -189,33 +187,23 @@
     }
 }
 
--(void)scrollToYOffset:(float)newY{
+-(void)scrollToYOffset:(CGPoint)newPt{
 
-//    NSLog(@"newY is %f",newY);
+    CGPoint convPt = [self.scrollView convertPoint:newPt fromView:self.superview];
+//    NSLog(@"comvPt is %@", NSStringFromCGPoint(convPt));
+    
+//    NSLog(@"newY is %f",convPt.y);
 //    NSLog(@"current offset is %@", NSStringFromCGPoint(self.scrollView.contentOffset));
     
-    float calY = newY;
+    float maxHeight = 0.0;
     
-//    if (UI_USER_INTERFACE_IDIOM() ==UIUserInterfaceIdiomPad) {
-        
-    calY = (newY >0)? newY+ SMALL_AXIOM_IPAD_HEIGHT - SCREEN_HEIGHT : -1*(newY+ SMALL_AXIOM_IPAD_HEIGHT + SCREEN_HEIGHT  );
-//    }
+    maxHeight = self.scrollView.contentSize.height - SCREEN_HEIGHT+20;
     
-    calY = (calY >self.scrollView.contentSize.height)?calY =calY - SCREEN_HEIGHT :calY;
+    float calY = (convPt.y/SCREEN_HEIGHT);
+
+    calY = (SCREEN_HEIGHT*(calY)>maxHeight)? (maxHeight) :SCREEN_HEIGHT*(calY);
     
-//    if (newY >SCREEN_HEIGHT && self.scrollView.contentOffset.y ==0) {
-        
-         [self.scrollView setContentOffset:CGPointMake(self.scrollView.contentOffset.x,calY) animated:YES];
-//    }
-    
-//    if (newY <SCREEN_HEIGHT && self.scrollView.contentOffset.y <=200) {
-//        return;
-//    }
-//    else{
-//    
-//        [self.scrollView setContentOffset:CGPointMake(self.scrollView.contentOffset.x,SCREEN_HEIGHT - newY) animated:YES];
-//    }
-//    [self.scrollView setContentOffset:CGPointMake(self.scrollView.contentOffset.x,SCREEN_HEIGHT - newY) animated:YES];
+    [self.scrollView setContentOffset:CGPointMake(self.scrollView.contentOffset.x,calY) animated:YES];
 }
 
 /*
@@ -239,5 +227,16 @@
     self.isGestureEnabled = YES;
     
 }
+
+//-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+//
+//    NSLog(@"Scroll View content offset is %@", NSStringFromCGPoint(self.scrollView.contentOffset));
+//    NSLog(@"Scroll content size is %@", NSStringFromCGSize(self.scrollView.contentSize));
+//}
+//
+//-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+//
+//    NSLog(@"Scroll View content offset is %@", NSStringFromCGPoint(self.scrollView.contentOffset));
+//}
 
 @end

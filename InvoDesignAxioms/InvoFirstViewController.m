@@ -102,9 +102,9 @@
     [self.assetsScrollView unhideImage:imageName];
 }
 
--(void)mainScrollviewYOffset:(float)newY{
+-(void)mainScrollviewYOffset:(CGPoint)newPt{
 
-    [self.assetsScrollView  scrollToYOffset:newY];
+    [self.assetsScrollView  scrollToYOffset:newPt];
 }
 
 - (BOOL) shouldAutorotate

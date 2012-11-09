@@ -14,7 +14,7 @@
 -(CGPoint)getPositionOf:(NSString *)imageName;
 -(void)hideImg:(NSString *)imageName;
 -(void)unhideImg:(NSString *)imageName;
--(void)mainScrollviewYOffset:(float)newY;
+-(void)mainScrollviewYOffset:(CGPoint)newY;
 -(void)enableParentTouches;
 @end
 
